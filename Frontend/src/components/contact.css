@@ -1,0 +1,60 @@
+/* Full screen overlay */
+.success-overlay {
+  position: fixed;
+  inset: 0;
+  background: rgba(15, 23, 42, 0.45); /* slate/dark glass */
+  backdrop-filter: blur(6px);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 9999;
+}
+
+/* Popup box */
+.success-popup {
+  background: linear-gradient(
+    135deg,
+    #e2e8f0,
+    #cbd5e1,
+    #94a3b8
+  );
+  border: 1px solid #cbd5e1;
+  padding: 24px 36px;
+  border-radius: 14px;
+  font-size: 18px;
+  font-weight: 600;
+  color: #0f172a; /* slate-900 */
+  box-shadow: 0 20px 40px rgba(0, 0, 0, 0.25);
+  text-align: center;
+  animation: popFade 0.35s ease-out;
+}
+
+/* Dark mode support */
+.dark .success-popup {
+  background: rgba(38, 38, 38, 0.9);
+  border: 1px solid #404040;
+  color: #f8fafc;
+}
+
+/* Orange accent bar (AUNIT brand) */
+.success-popup::after {
+  content: "";
+  display: block;
+  margin: 14px auto 0;
+  width: 60px;
+  height: 4px;
+  border-radius: 999px;
+  background: #ff6b00;
+}
+
+/* Animation */
+@keyframes popFade {
+  from {
+    transform: scale(0.9);
+    opacity: 0;
+  }
+  to {
+    transform: scale(1);
+    opacity: 1;
+  }
+}
